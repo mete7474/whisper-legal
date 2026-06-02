@@ -1,165 +1,90 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Whisper — Kullanım Şartları</title>
+  <title>Whisper — Terms of Use</title>
   <style>
-    :root {
-      --pink: #FF6B9D;
-      --pink-light: #FFF0F5;
-      --text: #1a1a1a;
-      --muted: #666;
-      --border: #eee;
-      --bg: #ffffff;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f8f8; color: var(--text); line-height: 1.6; }
-
-    header {
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .brand-dot { width: 32px; height: 32px; border-radius: 10px; background: var(--pink); display: flex; align-items: center; justify-content: center; }
-    .brand-dot span { color: white; font-size: 16px; font-weight: 700; }
-    .brand-name { font-size: 18px; font-weight: 700; color: var(--text); }
-    nav { display: flex; gap: 4px; }
-    nav a {
-      font-size: 14px; font-weight: 500; padding: 6px 14px; border-radius: 20px;
-      text-decoration: none; color: var(--muted); transition: all 0.15s;
-    }
-    nav a:hover { background: var(--pink-light); color: var(--pink); }
-    nav a.active { background: var(--pink-light); color: var(--pink); }
-
-    main { max-width: 720px; margin: 48px auto; padding: 0 24px 80px; }
-
-    .hero {
-      background: var(--pink-light);
-      border: 1px solid rgba(255,107,157,0.15);
-      border-radius: 16px;
-      padding: 32px;
-      margin-bottom: 40px;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: var(--pink);
-      color: white;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-    }
-    .hero h1 { font-size: 28px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-    .hero p { font-size: 14px; color: var(--muted); }
-
-    .card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px 32px;
-      margin-bottom: 16px;
-    }
-    .card h2 {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .card h2::before {
-      content: '';
-      display: block;
-      width: 4px;
-      height: 16px;
-      background: var(--pink);
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
-    .card p { font-size: 15px; color: #444; line-height: 1.7; }
-    .card a { color: var(--pink); text-decoration: none; }
-    .card a:hover { text-decoration: underline; }
-
-    footer {
-      text-align: center;
-      padding: 32px 24px;
-      font-size: 13px;
-      color: #bbb;
-      border-top: 1px solid var(--border);
-      margin-top: 48px;
-    }
-    footer a { color: var(--pink); text-decoration: none; }
+    :root { --fg:#1A1A2E; --muted:#6B7280; --accent:#E11D48; --bg:#FFFFFF; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--fg);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.65; -webkit-font-smoothing:antialiased; }
+    .wrap { max-width:720px; margin:0 auto; padding:48px 24px 80px; }
+    header { border-bottom:1px solid #ECECF2; padding-bottom:24px; margin-bottom:24px; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:20px; }
+    .brand .dot { width:26px; height:26px; border-radius:8px; background:var(--accent); display:inline-block; }
+    h1 { font-size:30px; margin:18px 0 6px; letter-spacing:-0.5px; }
+    .updated { color:var(--muted); font-size:14px; }
+    h2 { font-size:19px; margin:32px 0 8px; }
+    p { margin:0 0 8px; color:#2A2A3C; }
+    a { color:var(--accent); }
+    .langbar { display:flex; gap:8px; margin:16px 0 0; }
+    .langbar button { border:1px solid #E4E4EC; background:#F8F8FB; color:#1A1A2E; padding:6px 14px;
+      border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; }
+    .langbar button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+    [data-lang] { display:none; }
+    [data-lang].show { display:block; }
+    footer { margin-top:48px; padding-top:24px; border-top:1px solid #ECECF2; color:var(--muted); font-size:14px; }
   </style>
 </head>
 <body>
-  <header>
-    <a class="brand" href="index.html">
-      <div class="brand-dot"><span>W</span></div>
-      <span class="brand-name">Whisper</span>
-    </a>
-    <nav>
-      <a href="index.html">Gizlilik</a>
-      <a href="terms.html" class="active">Kullanım Şartları</a>
-    </nav>
-  </header>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="dot"></span> Whisper</div>
+      <h1>Terms of Use</h1>
+      <div class="updated">Last updated: May 2026</div>
+      <div class="langbar">
+        <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+        <button id="btn-tr" onclick="setLang('tr')">Türkçe</button>
+      </div>
+    </header>
 
-  <main>
-    <div class="hero">
-      <div class="hero-badge">Kullanım Şartları</div>
-      <h1>Adil ve şeffaf kurallar.</h1>
-      <p>Son güncelleme: Mayıs 2026</p>
+    <div data-lang="en" class="show">
+      <h2>Use of service</h2>
+      <p>Whisper is an AI-powered messaging assistant for users aged 18 and over. You agree to use the service for lawful purposes only.</p>
+      <h2>Account responsibility</h2>
+      <p>You are responsible for the security of your account. Do not share your password. All activity on your account is your responsibility.</p>
+      <h2>Limitations of AI content</h2>
+      <p>AI suggestions are not professional relationship or mental health advice. Use suggestions with your own judgement. Whisper is not liable for the outcomes of generated content.</p>
+      <h2>Subscriptions and refunds</h2>
+      <p>Premium subscriptions auto-renew. Payment is charged to your App Store account at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. To cancel, use your App Store account settings. Refund policy is subject to store rules.</p>
+      <h2>Prohibited use</h2>
+      <p>Using the service for harassment, fraud, harm to others, or illegal activities is strictly prohibited. Violations will result in account termination.</p>
+      <h2>Changes</h2>
+      <p>We may update these terms from time to time. You will be notified by email of significant changes.</p>
+      <h2>Contact</h2>
+      <p>For any questions, email us at <a href="mailto:whisperappai@gmail.com">whisperappai@gmail.com</a>.</p>
     </div>
 
-    <div class="card">
+    <div data-lang="tr">
       <h2>Hizmet kullanımı</h2>
-      <p>Whisper, AI destekli mesajlaşma asistanıdır. 18 yaş ve üzeri kullanıcılar içindir. Hizmeti yasal amaçlarla kullanmayı kabul edersin.</p>
-    </div>
-
-    <div class="card">
+      <p>Whisper, yapay zekâ destekli bir mesajlaşma asistanıdır ve 18 yaş ve üzeri kullanıcılar içindir. Hizmeti yalnızca yasal amaçlarla kullanmayı kabul edersin.</p>
       <h2>Hesap sorumluluğu</h2>
       <p>Hesabının güvenliğinden sen sorumlusun. Şifreni paylaşma. Hesabında gerçekleşen tüm işlemler senin sorumluluğundadır.</p>
-    </div>
-
-    <div class="card">
       <h2>AI içeriklerin sınırları</h2>
-      <p>AI önerileri profesyonel ilişki/mental health tavsiyesi değildir. Önerileri kendi yargınla kullan. Whisper, üretilen içeriklerin sonuçlarından sorumlu tutulamaz.</p>
-    </div>
-
-    <div class="card">
+      <p>AI önerileri profesyonel ilişki veya ruh sağlığı tavsiyesi değildir. Önerileri kendi yargınla kullan. Whisper, üretilen içeriklerin sonuçlarından sorumlu tutulamaz.</p>
       <h2>Abonelik ve iadeler</h2>
-      <p>Premium abonelikler otomatik yenilenir. İptal için App Store / Google Play hesap ayarlarını kullan. İade politikası mağazaların kurallarına tabidir.</p>
-    </div>
-
-    <div class="card">
+      <p>Premium abonelikler otomatik yenilenir. Ödeme, satın alma onayında App Store hesabından tahsil edilir. Mevcut dönemin bitiminden en az 24 saat önce iptal edilmezse abonelik otomatik yenilenir. İptal için App Store hesap ayarlarını kullan. İade politikası mağaza kurallarına tabidir.</p>
       <h2>Yasaklı kullanım</h2>
-      <p>Taciz, dolandırıcılık, başkalarına zarar verme veya yasadışı eylemler için kullanım yasaktır. İhlal durumunda hesap kapatılır.</p>
-    </div>
-
-    <div class="card">
+      <p>Taciz, dolandırıcılık, başkalarına zarar verme veya yasa dışı eylemler için kullanım kesinlikle yasaktır. İhlal durumunda hesap kapatılır.</p>
       <h2>Değişiklikler</h2>
-      <p>Bu şartları zaman zaman güncelleyebiliriz. Önemli değişiklikler için email ile bildirim alırsın.</p>
-    </div>
-
-    <div class="card">
+      <p>Bu şartları zaman zaman güncelleyebiliriz. Önemli değişiklikler için e-posta ile bilgilendirilirsin.</p>
       <h2>İletişim</h2>
-      <p>Sorularınız için: <a href="mailto:metefurkanayyildiz6@gmail.com">metefurkanayyildiz6@gmail.com</a></p>
+      <p>Sorular için: <a href="mailto:whisperappai@gmail.com">whisperappai@gmail.com</a></p>
     </div>
-  </main>
 
-  <footer>
-    © 2026 Whisper &nbsp;·&nbsp; <a href="index.html">Gizlilik</a> &nbsp;·&nbsp; <a href="terms.html">Kullanım Şartları</a>
-  </footer>
+    <footer>© 2026 Whisper. &nbsp;·&nbsp; <a href="index.html">Privacy Policy / Gizlilik Politikası</a></footer>
+  </div>
+
+  <script>
+    function setLang(l){
+      document.querySelectorAll('[data-lang]').forEach(function(el){ el.classList.toggle('show', el.getAttribute('data-lang')===l); });
+      document.getElementById('btn-en').classList.toggle('active', l==='en');
+      document.getElementById('btn-tr').classList.toggle('active', l==='tr');
+      document.documentElement.lang = l;
+    }
+    if((navigator.language||'').toLowerCase().startsWith('tr')) setLang('tr');
+  </script>
 </body>
 </html>
